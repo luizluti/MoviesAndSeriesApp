@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Container, FlatList, Image, NoImage, NoImageText, Title, Description, HR } from './styles'
-import Axios from 'axios'
+import axios from 'axios'
 
 const SearchMovies = ({ route }) => {
   const apiSearch = 'https://api.themoviedb.org/3/search/movie?language=pt-BR&api_key=4a967f81fac3caef839b965dc2c8888b&query='
@@ -8,7 +8,7 @@ const SearchMovies = ({ route }) => {
   const [movies, setMovies] = useState([])
 
   useEffect(() => {
-    Axios(apiSearch + route.params.movie).then(({ data }) => {
+    axios(apiSearch + route.params.movie).then(({ data }) => {
       const results = data.results
       setMovies(results)
     })
