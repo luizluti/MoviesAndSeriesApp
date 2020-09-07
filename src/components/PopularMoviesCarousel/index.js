@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Dimensions, TouchableOpacity } from 'react-native'
+import { Dimensions, TouchableOpacity, Alert } from 'react-native'
 import { Container, SlideView, CarouselImg, Title } from './styles'
 import Carousel from 'react-native-snap-carousel'
 import axios from 'axios'
@@ -24,7 +24,7 @@ export default function PopularMoviesCarousel () {
   const onRenderItem = ({ item }) => {
     return (
       <>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => { Alert.alert(`${item.title}`, `${item.overview}`) }}>
           <CarouselImg
             source={{ uri: `https://image.tmdb.org/t/p/w200${item.poster_path}` }}
           />

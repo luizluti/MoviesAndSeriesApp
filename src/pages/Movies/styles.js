@@ -28,5 +28,5 @@ export const YourList = styled.TouchableOpacity`
   padding: 10px;
 `
 export const YourListText = styled.Text`
-  font-size: 36px;
+  font-size: 24px;
 `

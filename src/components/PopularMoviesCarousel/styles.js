@@ -15,7 +15,6 @@ export const CarouselImg = styled.Image`
     width: 200px;
     height: 300px;
     border-radius: 12px;
-    background-color: rgba(0,0,0,0.5);
 `
 export const Title = styled.Text`
   color: #FFF;
