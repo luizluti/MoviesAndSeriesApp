@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Container, Header, Text, SearchButton } from './styles'
+import { Container, Header, Text, SearchButton, YourList, YourListText } from './styles'
 // import { useNavigation } from '@react-navigation/native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import SearchMovieModal from '../../components/SearchMovieModal'
-import MoviesCarousel from '../../components/MoviesCarousel'
+import PopularMoviesCarousel from '../../components/PopularMoviesCarousel'
 
 const Movies = () => {
   // const navigation = useNavigation()
@@ -28,7 +28,14 @@ const Movies = () => {
         closeModal={closeModal}
       />
 
-      <MoviesCarousel />
+      <PopularMoviesCarousel />
+
+      <YourList
+        // eslint-disable-next-line no-undef
+        onPress={() => { alert('EM BREVE...') }}
+      >
+        <YourListText>Sua lista de Filmes</YourListText>
+      </YourList>
 
     </Container>
   )

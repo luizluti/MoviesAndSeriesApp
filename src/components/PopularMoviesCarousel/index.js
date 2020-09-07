@@ -6,7 +6,7 @@ import axios from 'axios'
 
 const { width: screenWidth } = Dimensions.get('window')
 
-export default function MoviesCarousel () {
+export default function PopularMoviesCarousel () {
   const apiPupular = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=4a967f81fac3caef839b965dc2c8888b&language=pt-BR'
 
   useEffect(() => {

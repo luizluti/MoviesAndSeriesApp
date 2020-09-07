@@ -18,3 +18,15 @@ export const Text = styled.Text`
 `
 
 export const SearchButton = styled.TouchableOpacity``
+
+export const YourList = styled.TouchableOpacity`
+  /* width: 90%; */
+  background-color: #FFF;
+  align-self: center;
+  border-radius: 16px;
+  margin: 20px;
+  padding: 10px;
+`
+export const YourListText = styled.Text`
+  font-size: 36px;
+`
