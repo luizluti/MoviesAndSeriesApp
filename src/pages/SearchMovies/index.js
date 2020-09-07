@@ -27,7 +27,7 @@ const SearchMovies = ({ route }) => {
       <FlatList
         style={styles.results}
         data={movies}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <View style={styles.results}>
             <Text style={styles.heading}>{item.title}</Text>
