@@ -3,6 +3,7 @@ import { Container, Header, Text, SearchButton } from './styles'
 // import { useNavigation } from '@react-navigation/native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import SearchMovieModal from '../../components/SearchMovieModal'
+import MoviesCarousel from '../../components/MoviesCarousel'
 
 const Movies = () => {
   // const navigation = useNavigation()
@@ -26,6 +27,8 @@ const Movies = () => {
         modalVisible={modalVisible}
         closeModal={closeModal}
       />
+
+      <MoviesCarousel />
 
     </Container>
   )
