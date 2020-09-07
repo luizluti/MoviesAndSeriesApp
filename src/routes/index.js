@@ -41,7 +41,7 @@ function Tabs () {
       }}
     >
       <Tab.Screen name='Movies' component={Movies} options={{ title: 'Filmes' }}/>
-      <Tab.Screen name='Series' component={Series} options={{ title: 'Séries' }}/>
+      <Tab.Screen name='Series' component={Series} options={{ title: 'Séries de TV' }}/>
     </Tab.Navigator>
 
   )
