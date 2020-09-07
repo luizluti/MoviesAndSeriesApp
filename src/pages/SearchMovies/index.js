@@ -30,33 +30,39 @@ const SearchMovies = ({ route }) => {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <View style={styles.results}>
-            <Text style={styles.heading}>{item.title}</Text>
 
             {item.poster_path
               ? <Image
-                source={{ uri: `https://image.tmdb.org/t/p/w300${item.poster_path}` }}
+                source={{ uri: `https://image.tmdb.org/t/p/w200${item.poster_path}` }}
                 style={{
-                  height: 450
+                  height: 400,
+                  width: 250,
+                  alignSelf: 'center',
+                  marginTop: 20
                 }}
-                resizeMode="cover"
+                // resizeMode="cover"
               />
               : <View style={{
                 width: '100%',
                 height: 200,
                 backgroundColor: '#445565',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
+                marginTop: 20
               }}>
                 <Text style={{
                   fontSize: 24
                 }}>Sem Imagem</Text>
               </View> }
 
+            <Text style={styles.heading}>{item.title}</Text>
+
             <Text style={{
-              color: '#FFF',
-              fontSize: 16
+              color: '#909090',
+              fontSize: 16,
+              margin: 10
             }}>{item.overview}</Text>
-            <Text>Nota: {item.vote_average}</Text>
+            {/* <Text style={{ margin: 10, color: '#FFF' }}>Nota: {item.vote_average}</Text> */}
           </View>
         )}
       />
@@ -82,18 +88,20 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
   results: {
-    flex: 1
+    flex: 1,
+    borderBottomColor: '#909090',
+    borderBottomWidth: 1
   },
   movie: {
     flex: 1,
-    width: '100%',
-    marginBottom: 20
+    width: '100%'
   },
   heading: {
     color: '#FFF',
     fontSize: 24,
     fontWeight: '700',
-    padding: 20
+    marginTop: 10,
+    alignSelf: 'center'
     // backgroundColor: '#445565'
   }
 })

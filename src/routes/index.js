@@ -5,7 +5,6 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import Colors from '../styles/Colors'
 
 import Movies from '../pages/Movies'
 import Series from '../pages/Series'
@@ -35,10 +34,10 @@ function Tabs () {
       }) }
       tabBarOptions={{
         style: {
-          backgroundColor: Colors.background
+          backgroundColor: '#121218'
         },
-        activeTintColor: Colors.white,
-        inactiveTintColor: Colors.grey
+        activeTintColor: '#FFF',
+        inactiveTintColor: '#909090'
       }}
     >
       <Tab.Screen name='Movies' component={Movies} options={{ title: 'Filmes' }}/>
@@ -58,9 +57,9 @@ export default function App () {
           options={{
             title: 'Pesquisar Filme',
             headerStyle: {
-              backgroundColor: Colors.background
+              backgroundColor: '#121218'
             },
-            headerTintColor: Colors.white
+            headerTintColor: '#FFF'
           }}
         />
       </Stack.Navigator>
