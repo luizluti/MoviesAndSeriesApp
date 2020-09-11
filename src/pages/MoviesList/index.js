@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Container, FlatList, Image, NoImage, NoImageText, Title, Description, HR, AddBtn, AddBtnText } from './styles'
+import AsyncStorage from '@react-native-community/async-storage'
 
 const MoviesList = ({ route }) => {
   const [movies, setMovies] = useState([])

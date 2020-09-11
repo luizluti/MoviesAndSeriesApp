@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Container, FlatList, Image, NoImage, NoImageText, Title, Description, HR, AddBtn, AddBtnText } from './styles'
 import axios from 'axios'
+import AsyncStorage from '@react-native-community/async-storage'
 
 const SearchMovies = ({ route }) => {
   const apiSearch = 'https://api.themoviedb.org/3/search/movie?language=pt-BR&api_key=4a967f81fac3caef839b965dc2c8888b&query='
@@ -13,6 +14,10 @@ const SearchMovies = ({ route }) => {
       setMovies(results)
     })
   }, [])
+
+  const handleAddMovie = (item) => {
+    alert(`${item.id}`)
+  }
 
   return (
     <Container>
@@ -33,7 +38,9 @@ const SearchMovies = ({ route }) => {
 
             <Description>{item.overview}</Description>
 
-            <AddBtn>
+            <AddBtn
+              onPress={() => handleAddMovie(item)}
+            >
               <AddBtnText>Salvar na sua Lista</AddBtnText>
             </AddBtn>
 
