@@ -19,14 +19,20 @@ export const Text = styled.Text`
 
 export const SearchButton = styled.TouchableOpacity``
 
-export const YourList = styled.TouchableOpacity`
-  /* width: 90%; */
+export const ListBtnWrapper = styled.View`
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px
+`
+
+export const ListBtn = styled.TouchableOpacity`
+  width: 100%;
   background-color: #FFF;
   align-self: center;
   border-radius: 16px;
-  margin: 20px;
   padding: 10px;
 `
-export const YourListText = styled.Text`
+export const ListBtnText = styled.Text`
   font-size: 24px;
+  text-align: center;
 `

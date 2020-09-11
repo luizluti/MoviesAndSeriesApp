@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container, Header, Text, SearchButton, YourList, YourListText } from './styles'
+import { Container, Header, Text, SearchButton, ListBtnWrapper, ListBtn, ListBtnText } from './styles'
 // import { useNavigation } from '@react-navigation/native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import SearchMovieModal from '../../components/SearchMovieModal'
@@ -30,12 +30,14 @@ const Movies = () => {
 
       <PopularMoviesCarousel />
 
-      <YourList
+      <ListBtnWrapper>
+        <ListBtn
         // eslint-disable-next-line no-undef
-        onPress={() => { alert('EM BREVE...') }}
-      >
-        <YourListText>Sua lista de Filmes</YourListText>
-      </YourList>
+          onPress={() => { alert('EM BREVE...') }}
+        >
+          <ListBtnText>Sua lista de Filmes</ListBtnText>
+        </ListBtn>
+      </ListBtnWrapper>
 
     </Container>
   )

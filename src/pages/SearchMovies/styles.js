@@ -47,11 +47,22 @@ export const Description = styled.Text`
   color: #909090;
   font-size: 16px;
   margin-top: 10px;
-  margin-bottom: 10px;
   text-align: center;
 `
 
 export const HR = styled.View`
   border-bottom-width: 1px;
   border-bottom-color: #909090;
+`
+export const AddBtn = styled.TouchableOpacity`
+  width: 100%;
+  background-color: #FFF;
+  align-self: center;
+  border-radius: 16px;
+  margin: 20px;
+  padding: 10px;
+`
+export const AddBtnText = styled.Text`
+  font-size: 24px;
+  text-align: center;
 `

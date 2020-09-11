@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, FlatList, Image, NoImage, NoImageText, Title, Description, HR } from './styles'
+import { Container, FlatList, Image, NoImage, NoImageText, Title, Description, HR, AddBtn, AddBtnText } from './styles'
 import axios from 'axios'
 
 const SearchMovies = ({ route }) => {
@@ -32,6 +32,10 @@ const SearchMovies = ({ route }) => {
             <Title>{item.title}</Title>
 
             <Description>{item.overview}</Description>
+
+            <AddBtn>
+              <AddBtnText>Salvar na sua Lista</AddBtnText>
+            </AddBtn>
 
             <HR/>
           </>
