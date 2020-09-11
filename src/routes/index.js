@@ -9,6 +9,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import Movies from '../pages/Movies'
 import Series from '../pages/Series'
 import SearchMovies from '../pages/SearchMovies'
+import MoviesList from '../pages/MoviesList'
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -56,6 +57,16 @@ export default function App () {
           component={SearchMovies}
           options={{
             title: 'Pesquisar Filme',
+            headerStyle: {
+              backgroundColor: '#121218'
+            },
+            headerTintColor: '#FFF'
+          }}
+        />
+        <Stack.Screen name="MoviesList"
+          component={MoviesList}
+          options={{
+            title: 'Sua Lista de Filmes',
             headerStyle: {
               backgroundColor: '#121218'
             },
