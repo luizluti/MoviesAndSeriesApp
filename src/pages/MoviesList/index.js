@@ -5,6 +5,16 @@ import AsyncStorage from '@react-native-community/async-storage'
 const MoviesList = ({ route }) => {
   const [movies, setMovies] = useState([])
 
+  useEffect(() => {
+    async function getMovie () {
+      const data = await AsyncStorage.getItem('@movies')
+      const movie = await JSON.parse(data)
+      setMovies(movie)
+    }
+
+    getMovie()
+  }, [])
+
   return (
     <Container>
       <FlatList
@@ -12,9 +22,9 @@ const MoviesList = ({ route }) => {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <>
-            {item.poster_path
+            {item.img
               ? <Image
-                source={{ uri: `https://image.tmdb.org/t/p/w200${item.poster_path}` }}
+                source={{ uri: `https://image.tmdb.org/t/p/w200${item.img}` }}
               />
               : <NoImage>
                 <NoImageText>Sem Imagem</NoImageText>
@@ -22,10 +32,10 @@ const MoviesList = ({ route }) => {
 
             <Title>{item.title}</Title>
 
-            <Description>{item.overview}</Description>
+            <Description>{item.description}</Description>
 
             <AddBtn>
-              <AddBtnText>Salvar na sua Lista</AddBtnText>
+              <AddBtnText>Remover da Lista</AddBtnText>
             </AddBtn>
 
             <HR/>

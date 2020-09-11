@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { Container, FlatList, Image, NoImage, NoImageText, Title, Description, HR, AddBtn, AddBtnText } from './styles'
+import { useNavigation } from '@react-navigation/native'
 import axios from 'axios'
 import AsyncStorage from '@react-native-community/async-storage'
 
 const SearchMovies = ({ route }) => {
+  const navigation = useNavigation()
+
   const apiSearch = 'https://api.themoviedb.org/3/search/movie?language=pt-BR&api_key=4a967f81fac3caef839b965dc2c8888b&query='
 
   const [movies, setMovies] = useState([])
+  const [moviesList, setMoviesList] = useState([])
 
   useEffect(() => {
     axios(apiSearch + route.params.movie).then(({ data }) => {
@@ -15,8 +19,32 @@ const SearchMovies = ({ route }) => {
     })
   }, [])
 
-  const handleAddMovie = (item) => {
-    alert(`${item.id}`)
+  useEffect(() => {
+    async function getMovie () {
+      const data = await AsyncStorage.getItem('@movies')
+
+      if (data) {
+        const list = await JSON.parse(data)
+        setMoviesList(list)
+      }
+    }
+
+    getMovie()
+  }, [])
+
+  const handleAddMovie = async (item) => {
+    const data = {
+      id: item.id,
+      title: item.title,
+      img: item.poster_path,
+      description: item.overview
+    }
+
+    moviesList.push(data)
+
+    await AsyncStorage.setItem('@movies', JSON.stringify(moviesList))
+
+    navigation.navigate('MoviesList')
   }
 
   return (

@@ -56,7 +56,7 @@ export const HR = styled.View`
 `
 export const AddBtn = styled.TouchableOpacity`
   width: 100%;
-  background-color: #FFF;
+  background-color: #d90429;
   align-self: center;
   border-radius: 16px;
   margin: 20px;
@@ -65,4 +65,5 @@ export const AddBtn = styled.TouchableOpacity`
 export const AddBtnText = styled.Text`
   font-size: 24px;
   text-align: center;
+  color: #FFF
 `
