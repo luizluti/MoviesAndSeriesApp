@@ -15,6 +15,12 @@ const MoviesList = ({ route }) => {
     getMovie()
   }, [])
 
+  const handleDeleteMovie = async (itemId) => {
+    const newList = movies.filter(item => item.id !== itemId)
+    await AsyncStorage.setItem('@movies', JSON.stringify(newList))
+    setMovies(newList)
+  }
+
   return (
     <Container>
       <FlatList
@@ -34,7 +40,9 @@ const MoviesList = ({ route }) => {
 
             <Description>{item.description}</Description>
 
-            <AddBtn>
+            <AddBtn
+              onPress={() => handleDeleteMovie(item.id)}
+            >
               <AddBtnText>Remover da Lista</AddBtnText>
             </AddBtn>
 
