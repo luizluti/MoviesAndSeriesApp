@@ -65,7 +65,13 @@ export default function App () {
         />
         <Stack.Screen name="MoviesList"
           component={MoviesList}
-          options={{ headerShown: false }}
+          options={{
+            title: 'Lista de Filmes',
+            headerStyle: {
+              backgroundColor: '#121218'
+            },
+            headerTintColor: '#FFF'
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

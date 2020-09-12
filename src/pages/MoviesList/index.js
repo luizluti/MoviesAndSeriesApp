@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Header, HeaderBtn, HeaderText, ListWrapper, FlatList, Image, NoImage, NoImageText, Title, Description, HR, AddBtn, AddBtnText } from './styles'
-import { useNavigation, StackActions } from '@react-navigation/native'
+import { Container, FlatList, Image, NoImage, NoImageText, Title, Description, HR, AddBtn, AddBtnText } from './styles'
 import AsyncStorage from '@react-native-community/async-storage'
 
 const MoviesList = ({ route }) => {
-  const navigation = useNavigation()
-
   const [movies, setMovies] = useState([])
 
   useEffect(() => {
@@ -26,43 +23,34 @@ const MoviesList = ({ route }) => {
 
   return (
     <Container>
-      <Header>
-        <HeaderBtn
-          onPress={() => navigation.dispatch(StackActions.popToTop())}
-        >
-          <HeaderText>Início</HeaderText>
-        </HeaderBtn>
-      </Header>
 
-      <ListWrapper>
-        <FlatList
-          data={movies}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => (
-            <>
-              {item.img
-                ? <Image
-                  source={{ uri: `https://image.tmdb.org/t/p/w200${item.img}` }}
-                />
-                : <NoImage>
-                  <NoImageText>Sem Imagem</NoImageText>
-                </NoImage> }
+      <FlatList
+        data={movies}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => (
+          <>
+            {item.img
+              ? <Image
+                source={{ uri: `https://image.tmdb.org/t/p/w200${item.img}` }}
+              />
+              : <NoImage>
+                <NoImageText>Sem Imagem</NoImageText>
+              </NoImage> }
 
-              <Title>{item.title}</Title>
+            <Title>{item.title}</Title>
 
-              <Description>{item.description}</Description>
+            <Description>{item.description}</Description>
 
-              <AddBtn
-                onPress={() => handleDeleteMovie(item.id)}
-              >
-                <AddBtnText>Remover da Lista</AddBtnText>
-              </AddBtn>
+            <AddBtn
+              onPress={() => handleDeleteMovie(item.id)}
+            >
+              <AddBtnText>Remover da Lista</AddBtnText>
+            </AddBtn>
 
-              <HR/>
-            </>
-          )}
-        />
-      </ListWrapper>
+            <HR/>
+          </>
+        )}
+      />
 
     </Container>
   )

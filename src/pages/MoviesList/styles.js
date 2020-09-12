@@ -3,26 +3,27 @@ import styled from 'styled-components/native'
 export const Container = styled.View`
   flex: 1;
   background-color: #1D1D27;
+  padding: 10px;
 `
 
-export const Header = styled.View`
-  background-color: #121218;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px
-`
+// export const Header = styled.View`
+//   background-color: #121218;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   padding: 10px
+// `
 
-export const HeaderBtn = styled.TouchableOpacity``
+// export const HeaderBtn = styled.TouchableOpacity``
 
-export const HeaderText = styled.Text`
-  font-size: 24px;
-  color: #FFF
-`
+// export const HeaderText = styled.Text`
+//   font-size: 24px;
+//   color: #FFF
+// `
 
-export const ListWrapper = styled.View`
-  flex: 1;
-  padding: 10px
-`
+// export const ListWrapper = styled.View`
+//   flex: 1;
+//   padding: 10px
+// `
 
 export const FlatList = styled.FlatList``
 

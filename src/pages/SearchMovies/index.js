@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Alert } from 'react-native'
 import { Container, FlatList, Image, NoImage, NoImageText, Title, Description, HR, AddBtn, AddBtnText } from './styles'
 import { useNavigation } from '@react-navigation/native'
 import axios from 'axios'
@@ -40,11 +41,15 @@ const SearchMovies = ({ route }) => {
       description: item.overview
     }
 
-    moviesList.push(data)
+    if (!(moviesList.find(movie => movie.id === item.id))) {
+      moviesList.push(data)
 
-    await AsyncStorage.setItem('@movies', JSON.stringify(moviesList))
+      await AsyncStorage.setItem('@movies', JSON.stringify(moviesList))
 
-    navigation.navigate('MoviesList')
+      navigation.navigate('MoviesList')
+    } else {
+      Alert.alert('Erro', 'Parece que você já adicionou este filme!')
+    }
   }
 
   return (

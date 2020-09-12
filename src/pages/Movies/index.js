@@ -35,7 +35,7 @@ const Movies = () => {
         // eslint-disable-next-line no-undef
           onPress={() => navigation.navigate('MoviesList')}
         >
-          <ListBtnText>Sua lista de Filmes</ListBtnText>
+          <ListBtnText>Sua Lista de Filmes</ListBtnText>
         </ListBtn>
       </ListBtnWrapper>
 

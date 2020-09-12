@@ -47,6 +47,7 @@ export const Description = styled.Text`
   color: #909090;
   font-size: 16px;
   margin-top: 10px;
+  margin-bottom: 20px;
   text-align: center;
 `
 
@@ -59,7 +60,7 @@ export const AddBtn = styled.TouchableOpacity`
   background-color: #FFF;
   align-self: center;
   border-radius: 16px;
-  margin: 20px;
+  margin-bottom: 20px;
   padding: 10px;
 `
 export const AddBtnText = styled.Text`
