@@ -3,13 +3,30 @@ import styled from 'styled-components/native'
 export const Container = styled.View`
   flex: 1;
   background-color: #1D1D27;
+`
+
+export const Header = styled.View`
+  background-color: #121218;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px
+`
+
+export const HeaderBtn = styled.TouchableOpacity``
+
+export const HeaderText = styled.Text`
+  font-size: 24px;
+  color: #FFF
+`
+
+export const ListWrapper = styled.View`
+  flex: 1;
   padding: 10px
 `
 
 export const FlatList = styled.FlatList``
 
 export const List = styled.View`
-  flex: 1;
   border-bottom-color: #909090;
   border-bottom-width: 1px
 `

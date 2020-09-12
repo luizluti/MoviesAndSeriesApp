@@ -66,11 +66,13 @@ const SearchMovies = ({ route }) => {
 
             <Description>{item.overview}</Description>
 
+            {!(moviesList.find(movie => movie.id === item.id)) &&
             <AddBtn
               onPress={() => handleAddMovie(item)}
             >
               <AddBtnText>Salvar na sua Lista</AddBtnText>
             </AddBtn>
+            }
 
             <HR/>
           </>
